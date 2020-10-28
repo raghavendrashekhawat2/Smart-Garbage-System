@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #92a8d1;
+        }
+    </style>
+
+{% endblock %}
+
+{% block main %}
+
+    <IMG STYLE="position:absolute; TOP:100px; LEFT:40px; WIDTH:800px; HEIGHT:600px" SRC="static/recycle-555645.jpg">
+
+    <div STYLE="position:absolute; TOP:200px; LEFT:1000px; WIDTH:600px; HEIGHT:600px">
+	<p1 style ="text-align: center">
+    <h4 style="color: Green"> Login</h4>
+    <br>
+    </p1>
+    <form action = "\login", method = "POST">
+    	<p style = "text-align: center">
+        <label for="username" >Enter Username: </label><br>
+        <input type = "text" id ="username" name = username><br>
+        <label for= "pswd" >Enter Password </label><br>
+        <input type = "password" id = "pswd" name = password><br>
+        <br><input type = "submit"> <br>
+    	</p>
+    </p3>
+	</form>
+    </div>
+
+
+
+{% endblock %}

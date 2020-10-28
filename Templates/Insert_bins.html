@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+    Insert Bins
+{% endblock %}
+
+{% block main %}
+    <style>
+    body {
+        background-image: url('static/fields.jpg');
+    }
+  </style>
+    <br>
+    <br>
+    <form action ="\Insert_bins" method="POST" style="text-align: center">
+        <label for = "country" style="color: blue"> Enter Country</label><br>
+		<input type = "text" autofocus="on" autocomplete="off"  name ="country" id = "country" placeholder ="Name"><br>
+
+        <label for="State" style="color: blue"> Enter State</label><br>
+		<input type ="text" id="state" name = state placeholder = "State"> <br>
+
+        <label for="city" style="color: blue"> Enter City</label><br>
+		<input type="text" name="city" id="city" placeholder="City" > <br>
+
+        <label for="lat" style="color: blue"> Latitude</label><br>
+		<input type ="number" name="lat" id ="lat" placeholder="Enter lat" step = 0.00000001> <br>
+
+        <label for="lng" style="color: blue"> Longitude</label><br>
+		<input type ="number" name="lng" id ="lng" placeholder="Enter lng" step = 0.00000001> <br>
+
+        <br><label for="imp_loc" style="color: blue"> Tick if bin is in priority area</label>
+        <input type = "checkbox" name = "imp_loc" ><br><br>
+        <input type = "submit" placeholder="Submit" ><br>
+    </form>
+
+
+{% endblock %}

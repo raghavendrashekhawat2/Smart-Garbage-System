@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block title %}
+	<title>
+		Register
+	</title>
+	<style>
+		body{
+			background-color: white ;
+			}
+	</style>
+
+{% endblock %}
+
+{% block main %}
+<body>
+
+	<IMG STYLE="position:absolute; TOP:100px; LEFT:20px; WIDTH:1250px; HEIGHT:750px" SRC="static/crowd-693396.jpg">
+
+
+	<div style="position:absolute; TOP:180px; LEFT:1350px; WIDTH:300px; HEIGHT:300px ">
+		 <h4 style ="color: Green">Register </h4>
+	<form action="/register" method="POST">
+		<label for = "name"> Enter your name</label><br>
+		<input type = "text" autofocus="on" autocomplete="off"  name ="name" id = "name" placeholder ="Name"><br>
+		<label for="user"> Enter username</label><br>
+		<input type ="text" id="user" name = username placeholder = "username"> <br>
+		<label for="pass"> Enter password</label><br>
+		<input type="password" name="password" id="pass" placeholder="Password" > <br>
+		<label for="repass"> Confirm password</label><br>
+		<input type ="password" name="repassword" id ="repass" placeholder="Password again"> <br>
+		<input type ="radio" name ="acc_type" value = "Male" id="r1">
+		<label for="r1"> Male</label><br>
+		<input type ="radio" name ="acc_type" value = "Female" id="r2">
+		<label for="r2"> Female</label><br>
+		<input type ="submit" placeholder="Submit"><br>
+	</form>
+    </div>
+
+{% endblock %}

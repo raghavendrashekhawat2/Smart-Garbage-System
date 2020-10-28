@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+  <title>
+    {% block title %}
+    {% endblock %}
+  </title>
+
+</head>
+
+
+<body>
+
+   <nav class="navbar navbar-expand-lg navbar-light bg-grey">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+     {% if session.user_id %}
+         <li class="nav-item"><a class="nav-link" href="/Insert_bins">Add bins </a> </li>
+         <li class="nav-item"><a class="nav-link" href="/home">Home </a></li>
+         <li class="nav-item"><a class="nav-link" href="/">Map</a></li>
+         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="/analysis">Analysis</a></li>
+     {% else %}
+         <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+         <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+         <li class="nav-item"><a class="nav-link" href="/">Map</a></li>
+     {% endif %}
+    </div>
+  </div>
+</nav>
+
+
+   <main class = "container p">
+      {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+     {% block main %} {% endblock %}
+  </main>
+</body>

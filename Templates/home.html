@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %}
+
+    <IMG STYLE="position:absolute; TOP:350px; LEFT:60px; WIDTH:300px; HEIGHT:300px" SRC="static/recycling-1341372.png">
+
+
+    <div style="position:absolute; TOP:100px; LEFT:500px; WIDTH:900px; HEIGHT:250px">
+    <h2 style="text-align: center">Active Smart Dustbins </h2>
+    <table class = "table table-boderless">
+    <thead>
+    <tr>
+        <th> Bin Id</th>
+        <th> Country</th>
+        <th> State</th>
+        <th> City</th>
+        <th> Date</th>
+        <th> Time</th>
+        <th> Garbage Percentage Filled</th>
+        <th> Air Quality</th>
+        <th> Odour</th>
+        <th> Priority</th>
+    </tr>
+    </thead>
+    {% for row in data %}
+        <script>alert(row);</script>
+        <tbody>
+        <tr>
+            <th> {{  row[0]   }} </th>
+            <th> {{  row[1]   }} </th>
+            <th> {{  row[2]   }} </th>
+            <th> {{  row[3]   }} </th>
+            {% for r in data_2 %}
+                {% if r[0]== row[0] %}
+                    <th> {{  r[1]  }} </th>
+                    <th> {{  r[2]  }} </th>
+                    <th> {{  r[3]   }} </th>
+                    <th> {{  r[4]   }} </th>
+                    <th> {{ r[5]    }} </th>
+                    <th> {{  (r[3]/10)|int + row[6] }}</th>
+                {% endif %}
+                {% if r[0] == [] %}
+                    <th>  None</th>
+                    <th>  None</th>
+                    <th>  None</th>
+                    <th>  None</th>
+                    <th>  None</th>
+                {% endif %}
+            {% endfor %}
+        </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+
+    <form action = "/home" method="POST">
+        <label for="binid">To remove bin enter bin id</label>
+        <input type = "number" id ="binid" name="binid" placeholder="Bin Id" min = 0 >
+         <input type = "submit" placeholder="Submit">
+    </form>
+    </div>
+{% endblock %}
