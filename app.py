@@ -69,7 +69,7 @@ def login():
         session["user_id"] = rows[0]
         # Implementation of main homepage
 
-        return render_template("home.html")
+        return redirect("/home")
     else:
         return render_template("login.html")
 
